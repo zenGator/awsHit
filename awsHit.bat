@@ -36,12 +36,11 @@ if defined output (
 set /a ddblocks=%rawsegsize%/4
 set /a segcount=(%disksize%/%rawsegsize%)+1
 
-echo With disksize of %disksize% and segments of %rawsegsize%:
-echo 	we will have %segcount% segments
+echo With disksize of %disksize% and segments of %rawsegsize% we will have %segcount% segments.
 echo Basic command we will be running is:
-echo     ssh -i %key% %user%@%host% "sudo dd if=/dev/xvd%volume% bs=4096 skip=[increments] count=%ddblocks% | gzip -2"  
-echo The files will be saved as %output%.dd.[increments].gz 
-
+echo     ssh -i %key% %user%@%host% "sudo dd if=/dev/xvd%volume% bs=4096 skip=[%ddblocks%*##] count=%ddblocks% | gzip -2"  
+echo The files will be saved as %output%.dd.[##].gz 
+echo.
 for /L %%c IN (1,1,%segcount%) do CALL :pullseg %%c
 
 exit /b 0
