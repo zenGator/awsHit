@@ -25,7 +25,8 @@ if defined extra (
 )
 
 if defined output (
-	echo we have everything we need
+	:: We have everything we need
+	echo.
 ) else (
 	echo.
 	echo ERROR:  %me%: Missing something
