@@ -51,7 +51,7 @@ exit /b 0
 set /a segnum=%1
 @echo Grabbing segment # %segnum%
 set /a skipper=(%segnum%-1)*(%rawsegsize%/4)
-echo   ssh -i %key% %user%@%host% "sudo dd if=/dev/xvd%volume% bs=4096 skip=%skipper% count=%ddblocks%| gzip -2" > %output%.dd.%segnum%.gz 
+ssh -i %key% %user%@%host% "sudo dd if=/dev/xvd%volume% bs=4096 skip=%skipper% count=%ddblocks%| gzip -2" > %output%.dd.%segnum%.gz 
 exit /b 0
 
 
