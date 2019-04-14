@@ -1,5 +1,11 @@
 ::20190412:zg
 
+::ToDo:  add switch for selecting gzip level
+::ToDO:  add better command-line parser (use real switches)
+::ToDo:  add means to select just a certain segment (for do-overs)
+::ToDo:  build in logging
+
+
 @echo off
 SETLOCAL ENABLEEXTENSIONS
 SET me=%~n0
