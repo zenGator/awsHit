@@ -4,6 +4,10 @@
 ::ToDO:  add better command-line parser (use real switches)
 ::ToDo:  add means to select just a certain segment (for do-overs)
 ::ToDo:  build in logging
+::ToDo:  more-verbose in-process messaging (segment #, start, end, output name
+::ToDo:  name should use 3-digit numbers (.001, .002, etc)
+::ToDo:  summarize results at conclusion
+
 
 
 @echo off
